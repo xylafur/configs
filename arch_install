@@ -9,14 +9,21 @@ sudo pacman -S --needed base-devel --quiet --noconfirm  &&
 
 echo "May want to update /etc/makepkg.conf to optimize for num processor cores"
 
-#setup aur and vundle
+#SETUP AUR
 mkdir aur
 cd aur &&
+#VUNDLE FOR VIM
 git clone https://aur.archlinux.org/vundle-git.git
 cd vundle-git &&
 makepkg -si vundle-git &&
 echo "You will still have to go run :PluginInstall in vim"
-cd ../../
+#SILVER SEARCHER (AKA ag)
+cd ../
+git clone https://aur.archlinux.org/silver-searcher-git.git
+cd silver-searcher-git
+makepkg -si silver-searcher-git
+cd ../
+
 sudo pacman -S ctags python3 python2 --quiet --noconfirm
 
 #installs X, KDE and i3 by default
@@ -41,5 +48,9 @@ sudo pacman -S networkmanager --quiet --noconfirm
 sudo pacman -S nm-connection-editor --quiet --noconfirm
 sudo pacman -S network-manager-applet --quiet --noconfirm
 
-
+#various tools
 sudo pacman -S acpi --quiet --noconfirm
+sudo pacman -S openssh sshfs nmap --quiet --noconfirm
+
+#last but not least, lets update
+sudo pacman -Syu --quiet --noconfirm
