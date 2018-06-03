@@ -1,0 +1,8 @@
+
+
+#shows all devices that it sees
+nmcli device wifi
+
+nmcli device wifi rescan
+
+nmcli device wifi connect <SSID> password <password>

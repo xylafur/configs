@@ -1,0 +1,45 @@
+#!/bin/bash
+
+sudo pacman -S vim --quiet --noconfirm  &&
+cp .vimrc ~/.vimrc
+
+sudo pacman -S screen --quiet --noconfirm   &&
+
+sudo pacman -S --needed base-devel --quiet --noconfirm  &&
+
+echo "May want to update /etc/makepkg.conf to optimize for num processor cores"
+
+#setup aur and vundle
+mkdir aur
+cd aur &&
+git clone https://aur.archlinux.org/vundle-git.git
+cd vundle-git &&
+makepkg -si vundle-git &&
+echo "You will still have to go run :PluginInstall in vim"
+cd ../../
+sudo pacman -S ctags python3 python2 --quiet --noconfirm
+
+#installs X, KDE and i3 by default
+sudo pacman -S xorg  xorg-xinit --quiet --noconfirm
+sudo pacman -S mesa --quiet --noconfirm
+
+sudo pacman -S plasma-desktop --quiet --noconfirm
+sudo pacman -S plasma-wayland-session --quiet --noconfirm
+
+sudo pacman -S i3-gaps --quiet --noconfirm
+sudo cp config ~/.config/i3/config
+sudo pacman -S dmenu --quiet --noconfirm
+
+#the i3 config defaults to termite/qutebrowser
+
+sudo pacman -S termite --quiet --noconfirm
+sudo pacman -S qutebrowser --quier --noconfirm
+
+#i like ifconfig, also network manager
+sudo pacman -S net-tools --quiet --noconfirm
+sudo pacman -S networkmanager --quiet --noconfirm
+sudo pacman -S nm-connection-editor --quiet --noconfirm
+sudo pacman -S network-manager-applet --quiet --noconfirm
+
+
+sudo pacman -S acpi --quiet --noconfirm

@@ -20,6 +20,8 @@ bindsym $mod+i exec qutebrowser
 exec xrandr --output eDP-1-1 --mode 2560x1440
 exec xrandr --output HDMI-1-1 --right-of eDP-1-1
 
+exec xrandr --output eDP-1 --mode 2560x1440
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -36,7 +38,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal -bg black -cr white -fg white
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec termite 
 
 bindsym $mod+v exec libreoffice
@@ -141,8 +143,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-
-bindsym $mod+i exec qutebrowser
 
 bindsym $mod+Shift+i exec qutebrowser
 

@@ -34,6 +34,8 @@ set wildmenu
 set laststatus=2                "displays filename at bottom
 set foldmethod=indent
 set foldnestmax=2
+"needed by you complete me
+set encoding=utf-8
 "------------------------------------------------------------------------------
 "------SPACING-----------------------------------------------------------------
 "------------------------------------------------------------------------------
@@ -124,8 +126,6 @@ Plugin 'rking/ag.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-execute pathogen#infect()
 
 map <silent> <C-n> :NERDTreeToggle<CR>
 
