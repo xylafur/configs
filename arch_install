@@ -22,7 +22,29 @@ cd ../
 git clone https://aur.archlinux.org/silver-searcher-git.git
 cd silver-searcher-git
 makepkg -si silver-searcher-git
+#Private internet access
 cd ../
+sudo pacman -S openvpn --quiet --noconfirm &&
+git clone https://aur.archlinux.org/private-internet-access-vpn.git
+#the hashes might need manual updating
+cd private-internet-access-vpn &&
+makepkg -si private-internet-access-vpn &&
+cd../
+
+git clone https://aur.archlinux.org/pia-nm.git
+cd pia-nm
+makepkg -si
+sudo cp src/* /etc/openvpn/client
+cd ../
+
+git clone https://aur.archlinux.org/openvpn-pia.git
+cd openvpn-pia
+makepkg -si
+cd ../
+
+cd ../
+
+
 
 sudo pacman -S ctags python3 python2 --quiet --noconfirm
 
@@ -37,6 +59,17 @@ sudo pacman -S i3-gaps --quiet --noconfirm
 sudo cp config ~/.config/i3/config
 sudo pacman -S dmenu --quiet --noconfirm
 
+cd aur
+git clone https://aur.archlinux.org/wal-git.git
+cd wal-git
+makepkg -si
+cd ../../
+
+cp feathers.jpg ~/.config/i3
+
+sudo pacman -S redshift --quiet --noconfirm
+sudo pacman -S feh --quiet --noconfirm
+
 #the i3 config defaults to termite/qutebrowser
 
 sudo pacman -S termite --quiet --noconfirm
@@ -48,9 +81,17 @@ sudo pacman -S networkmanager --quiet --noconfirm
 sudo pacman -S nm-connection-editor --quiet --noconfirm
 sudo pacman -S network-manager-applet --quiet --noconfirm
 
+#vpn stuff
+
 #various tools
 sudo pacman -S acpi --quiet --noconfirm
 sudo pacman -S openssh sshfs nmap --quiet --noconfirm
+sudo pacman -S vlc mplayer --quiet --noconfirm
+
+#sound
+sudo pacman -S alsa-utils --quiet --noconfirm
+sudo pacman -S pulseaudio pulseaudio-alsa --quiet --noconfirm
+sudo pacman -S pulsemixer --quiet --noconfirm
 
 #last but not least, lets update
 sudo pacman -Syu --quiet --noconfirm

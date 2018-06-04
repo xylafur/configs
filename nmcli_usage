@@ -6,3 +6,10 @@ nmcli device wifi
 nmcli device wifi rescan
 
 nmcli device wifi connect <SSID> password <password>
+
+
+#VPN
+nmcli con
+nmcli con up id <connection name> --ask
+nmcli con down id <connection name>
+
