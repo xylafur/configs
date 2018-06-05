@@ -82,8 +82,10 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <silent> <C-L> :bnext<CR>
 map <silent> <C-H> :bprevious<CR>
 
-
-
+map <S-h> <C-w>h
+map <S-l> <C-w>l
+map <S-j> <C-w>j
+map <S-k> <C-w>k
 
 "------------------------------------------------------------------------------
 "------VUNDLE------------------------------------------------------------------
@@ -104,29 +106,18 @@ map <silent> <C-H> :bprevious<CR>
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'Valloric/YouCompleteMe'
-
 Plugin 'majutsushi/tagbar'
-
-nmap <F8> :TagbarToggle<CR>
-
 Plugin 'cocopon/iceberg.vim'
-
 Plugin 'damage220/vim-finder'
-
 Plugin 'rking/ag.vim'
-
-
-" All of your Plugins must be added before the following line
+Plugin 'junegunn/fzf'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+nmap <F8> :TagbarToggle<CR>
 map <silent> <C-n> :NERDTreeToggle<CR>
+map <C-z> :FZF<CR>
 
 set tags=./tags;
