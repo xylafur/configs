@@ -42,9 +42,18 @@ cd openvpn-pia
 makepkg -si
 cd ../
 
+#stuff for yoaurt
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd ..
+
+
 cd ../
-
-
 
 sudo pacman -S ctags python3 python2 --quiet --noconfirm
 
@@ -75,6 +84,13 @@ sudo pacman -S feh --quiet --noconfirm
 sudo pacman -S termite --quiet --noconfirm
 sudo pacman -S qutebrowser --quier --noconfirm
 
+#cd aur
+#git clone https://aur.archlinux.org/moc-pulse.git 
+#cd icecat
+#makepkg -si
+#cd ../../
+sudo pacman -S moc --quiet --noconfirm
+
 #i like ifconfig, also network manager
 sudo pacman -S net-tools --quiet --noconfirm
 sudo pacman -S networkmanager --quiet --noconfirm
@@ -87,11 +103,27 @@ sudo pacman -S network-manager-applet --quiet --noconfirm
 sudo pacman -S acpi --quiet --noconfirm
 sudo pacman -S openssh sshfs nmap --quiet --noconfirm
 sudo pacman -S vlc mplayer --quiet --noconfirm
+sudo pacman -S lsof --quiet --noconfirm
 
 #sound
 sudo pacman -S alsa-utils --quiet --noconfirm
 sudo pacman -S pulseaudio pulseaudio-alsa --quiet --noconfirm
 sudo pacman -S pulsemixer --quiet --noconfirm
 
+cd aur
+git clone https://aur.archlinux.org/moc-pulse.git 
+cd moc-pulse
+make -si
+cd ../../
+
 #last but not least, lets update
 sudo pacman -Syu --quiet --noconfirm
+sudo pacman -S wavpack --quiet --noconfirm
+sudo pacman -S compton --quiet --noconfirm
+sudo pacman -S gimp --quiet --noconfirm
+sudo pacman -S neofetch --quiet --noconfirm
+sudo systemctl enable NetworkManager
+yaourt -S base16-manager-git
+sudo pacman -S cpupower --quiet --noconfirm
+sudo systemctl enable cpupower
+sudo systemctl enable cpupower

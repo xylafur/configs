@@ -38,7 +38,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal -bg black -cr white -fg white
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec  termite && wal -i ~/.config/i3/feathers.jpg -t
 bindsym $mod+Shift+Return exec termite 
 
 bindsym $mod+v exec libreoffice
@@ -183,7 +183,10 @@ bar {
 
 
 #gaps stuff
-gaps inner 20
+gaps inner 10
 gaps outer 10
 
-exec feh --bg-center ~/.config/i3/feathers.jpg
+exec feh --bg-center ~/.config/i3/perseverance.jpeg
+exec wal -i ~/.config/i3/perseverance.jpeg
+
+for_window [class="^.*"] border pixel 0
