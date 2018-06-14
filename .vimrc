@@ -1,4 +1,30 @@
 "------------------------------------------------------------------------------
+"------VUNDLE------------------------------------------------------------------
+"------------------------------------------------------------------------------
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'cocopon/iceberg.vim'
+Plugin 'damage220/vim-finder'
+Plugin 'rking/ag.vim'
+Plugin 'junegunn/fzf'
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+nmap <F8> :TagbarToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
+map <C-z> :FZF<CR>
+
+set tags=./tags;
+"------------------------------------------------------------------------------
 "------GENERAL-----------------------------------------------------------------
 "------------------------------------------------------------------------------
 set nocompatible                "be iMproved, required
@@ -17,7 +43,8 @@ set clipboard+=unnamed,unnamedplus,autoselect      "share clipbopard
 "------------------------------------------------------------------------------
 "------UI----------------------------------------------------------------------
 "------------------------------------------------------------------------------
-colorscheme elflord
+"colorscheme elflord
+colorscheme spacegray
 set number
 set relativenumber
 set ruler                       "Show cursor at all times
@@ -34,7 +61,7 @@ set wildmenu
 set laststatus=2                "displays filename at bottom
 set foldmethod=indent
 set foldnestmax=2
-"needed by you complete me
+"for youcomplete me
 set encoding=utf-8
 "------------------------------------------------------------------------------
 "------SPACING-----------------------------------------------------------------
@@ -87,37 +114,4 @@ map <S-l> <C-w>l
 map <S-j> <C-w>j
 map <S-k> <C-w>k
 
-"------------------------------------------------------------------------------
-"------VUNDLE------------------------------------------------------------------
-"------------------------------------------------------------------------------
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
-Plugin 'cocopon/iceberg.vim'
-Plugin 'damage220/vim-finder'
-Plugin 'rking/ag.vim'
-Plugin 'junegunn/fzf'
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-nmap <F8> :TagbarToggle<CR>
-map <silent> <C-n> :NERDTreeToggle<CR>
-map <C-z> :FZF<CR>
-
-set tags=./tags;
