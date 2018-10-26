@@ -1,9 +1,9 @@
 [options]
-font = Monospace 16
+font = Monospace 12
 
 [colors]
 
-foreground          = #DF3A01
+foreground          = #999999
 foreground_bold     = #999999
 cursor              = #999999
 cursor_foreground   = #000000
@@ -18,33 +18,33 @@ color7  = #c1c1c1
 color15 = #c1c1c1
 
 # Red
-color1  = #5f8787
-color9  = #5f8787
+color1  = #dc0000
+color9  = #840d0f
 
 # Green
-color2  = #fbcb97
-color10 = #fbcb97
+color2  = #27d127
+color10 = #007200
 
 # Yellow
-color3  = #e78a53
-color11 = #e78a53
+color3  = #e2ce36
+color11 = #ffff3d
 
 # Blue
-color4  = #888888
-color12 = #888888
+color4  = #367ee2
+color12 = #3e52e8
 
 # Purple
-color5  = #999999
-color13 = #999999
+color5  = #47229e
+color13 = #805bd8
 
 # Teal
-color6  = #aaaaaa
-color14 = #aaaaaa
+color6  = #00aeff
+color14 = #00d4ff
 
 # Extra colors
-color16 = #aaaaaa
-color17 = #444444
-color18 = #121212
-color19 = #222222
-color20 = #999999
-color21 = #999999
+color16 = #9eb9ff
+color17 = #9ee060
+color18 = #cd3aff
+color19 = #05f8fc
+color20 = #ff9914
+color21 = #fc14d9
