@@ -1,7 +1,9 @@
 OS="$(cat /etc/os-release  | grep -E "^ID=.*" | cut -d'=' -f2)"
 
-if [ $OS = 'fedora' ]; then
+if [ "$OS" = 'fedora' ]; then
     INSTALL="dnf install"
+elif [ "$OS" = 'arch' ]; then
+    INSTALL="pacman -S"
 else
     echo "Unknown linux distro!"
     exit
