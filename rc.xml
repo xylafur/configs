@@ -297,9 +297,11 @@
 
 
 
+    <!--
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+    -->
 
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
@@ -489,7 +491,7 @@
 
     <keybind key="W-p">
         <action name="Execute">
-            <command>termite -e python3</command>
+            <command>gnome-terminal -e python3</command>
         </action>
     </keybind>
 
@@ -506,7 +508,7 @@
 
     <keybind key="W-t">
         <action name="Execute">
-            <command>termite -d ~/projects/cosc4331-EmbeddedProgramming</command>
+            <command>gnome-terminal -d ~/projects/cosc4331-EmbeddedProgramming</command>
         </action>
     </keybind>
 
@@ -518,18 +520,27 @@
 
     <keybind key="W-f">
         <action name="Execute">
-            <command>termite -e ranger</command>
+            <command>gnome-terminal -e ranger</command>
         </action>
     </keybind>
 
 
     <keybind key="W-Return">
         <action name="Execute">
-            <command> termite</command>
+            <command> gnome-terminal</command>
         </action>
     </keybind>
 
-    <keybind key="W-j">
+
+    <keybind key="W-d">
+        <action name="Execute">
+            <command>Discord</command>
+        </action>
+    </keybind>
+
+
+
+    <keybind key="W-S-j">
         <action name="ToggleMaximize"/>
     </keybind>
 

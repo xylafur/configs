@@ -9,6 +9,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+Plugin 'udalov/kotlin-vim'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
@@ -78,8 +79,6 @@ set foldlevel=20
 highlight ExtraWhitespace ctermbg=green guibg=green
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 "------------------------------------------------------------------------------
 "------KEYBINDINGS-----------------------------------------------------------------
@@ -113,5 +112,9 @@ map <S-h> <C-w>h
 map <S-l> <C-w>l
 map <S-j> <C-w>j
 map <S-k> <C-w>k
+
+map <S-t> :hi Normal guibg=NONE ctermbg=NONE <CR>
+map <S-y> :colorscheme spacegray <CR>
+
 
 
