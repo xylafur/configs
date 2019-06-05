@@ -297,11 +297,11 @@
 
 
 
-    <!--
     <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
+        <action name="Execute">
+            <command>discord</command>
+        </action>
     </keybind>
-    -->
 
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
@@ -491,7 +491,7 @@
 
     <keybind key="W-p">
         <action name="Execute">
-            <command>gnome-terminal -e python3</command>
+            <command>terminator -x python3</command>
         </action>
     </keybind>
 
@@ -506,41 +506,26 @@
     </keybind>
 
 
-    <keybind key="W-t">
-        <action name="Execute">
-            <command>gnome-terminal -d ~/projects/cosc4331-EmbeddedProgramming</command>
-        </action>
-    </keybind>
-
     <keybind key="W-s">
         <action name="Execute">
-            <command>xrandr --output eDP-1 --mode 1920x1080</command>
+            <command>spotify</command>
         </action>
     </keybind>
 
     <keybind key="W-f">
         <action name="Execute">
-            <command>gnome-terminal -e ranger</command>
+            <command>terminator -x ranger</command>
         </action>
     </keybind>
 
 
     <keybind key="W-Return">
         <action name="Execute">
-            <command> gnome-terminal</command>
+            <command> terminator</command>
         </action>
     </keybind>
 
-
-    <keybind key="W-d">
-        <action name="Execute">
-            <command>Discord</command>
-        </action>
-    </keybind>
-
-
-
-    <keybind key="W-S-j">
+    <keybind key="W-j">
         <action name="ToggleMaximize"/>
     </keybind>
 
