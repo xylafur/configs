@@ -1,0 +1,65 @@
+[bar/mybar]
+modules-left = battery backlight wired-network wireless-network
+modules-right = date
+padding = 4
+module-margin = 3
+fixed-center = true
+border-size = 2
+border-color = #00000000
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %Y-%m-%d%
+time = %H:%M:%S
+
+format = <label>
+label = %date% %time%
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+label = Backlight: %percentage%%
+
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+label-discharging = Discharging: %percentage%%
+label-charging = Charging: %percentage%%
+
+[module/wired-network]
+type = internal/network
+interface = enp2s0
+
+label-disconnected = Ethernet
+label-disconnected-foreground = #ff0000
+
+label-connected = Ethernet [%local_ip%]
+label-connected-foreground = #00ff00
+
+[module/wireless-network]
+type = internal/network
+interface = wlp3s0
+
+label-disconnected = Wireless
+label-disconnected-foreground = #ff0000
+
+label-connected = Wireless (%essid%) [%local_ip%]
+label-connected-foreground = #00ff00
+
+
+[module/ewmh]
+type = internal/xworkspaces
+icon-0 = 0
+icon-1 = 1
+icon-2 = 2
+icon-3 = 3
+icon-4 = 4
