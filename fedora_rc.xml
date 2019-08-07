@@ -299,7 +299,7 @@
 
     <keybind key="W-d">
         <action name="Execute">
-            <command>discord</command>
+            <command>Discord</command>
         </action>
     </keybind>
 
@@ -360,6 +360,22 @@
       </action>
     </keybind>
 
+
+
+    <!-- Move stuff to different monitors -->
+    <keybind key="W-C-1">
+        <action name="MoveResizeTo">
+            <monitor>1</monitor>
+        </action>
+    </keybind>
+    <keybind key="W-C-2">
+        <action name="MoveResizeTo">
+            <monitor>2</monitor>
+        </action>
+    </keybind>
+
+
+
     <keybind key="W-S-h">
         <action name="UnmaximizeFull"/>
         <action name="MoveResizeTo">
@@ -368,6 +384,9 @@
             <height>50%</height>
         </action>
     </keybind>
+
+
+    <!-- Moving windows around the current screen -->
     <keybind key="W-S-l">
         <action name="UnmaximizeFull"/>
         <action name="MoveResizeTo">
@@ -453,7 +472,7 @@
 
 <!--===========================================================================
 
-                        CUSTOM APPLICATION OPENERS 
+                        CUSTOM APPLICATION OPENERS
 
 ============================================================================-->
 
@@ -511,6 +530,13 @@
             <command>spotify</command>
         </action>
     </keybind>
+
+    <keybind key="W-S-s">
+        <action name="Execute">
+            <command>steam</command>
+        </action>
+    </keybind>
+
 
     <keybind key="W-f">
         <action name="Execute">
