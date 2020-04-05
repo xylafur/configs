@@ -17,6 +17,11 @@ Plugin 'cocopon/iceberg.vim'
 Plugin 'damage220/vim-finder'
 Plugin 'rking/ag.vim'
 Plugin 'junegunn/fzf'
+Plugin 'tpope/vim-fugitive'
+Plugin 'itchyny/lightline.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'preservim/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -25,6 +30,8 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> :FZF<CR>
 
 set tags=./tags;
+
+let g:ycm_cland_binary_path = "/home/intern3/.local/bin/clangd"
 "------------------------------------------------------------------------------
 "------GENERAL-----------------------------------------------------------------
 "------------------------------------------------------------------------------
@@ -91,15 +98,17 @@ let mapleader=","
 noremap <leader><space> :nohlsearch<CR>
 noremap <leader>q :q<enter>
 noremap <leader>w :w<enter>
-noremap <leader>x :wq<enter> 
+noremap <leader>x :wq<enter>
 map <C-i> :set foldmethod=indent<CR>
 "allows you to quickly go to terminal and back
 map <C-d> :sh<CR>
 
+map <C-m> :MinimapToggle<CR>
+
 "extra shit for tags
 
 "opens tag in another tab
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "opens tab in vertcal split, Alt+]
 "map <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "
@@ -118,3 +127,5 @@ map <S-y> :colorscheme spacegray <CR>
 
 
 
+map <C-g> :Gblame<CR>
+map <C-b> :Gblame toggle<CR>
