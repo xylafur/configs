@@ -17,14 +17,28 @@ Plugin 'cocopon/iceberg.vim'
 Plugin 'damage220/vim-finder'
 Plugin 'rking/ag.vim'
 Plugin 'junegunn/fzf'
+Plugin 'tpope/vim-fugitive'
+Plugin 'itchyny/lightline.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'preservim/nerdtree'
+Plugin 'vhda/verilog_systemverilog.vim'
+Plugin 'Yohannfra/Vim-Goto-Header'
+"Plugin 'fatih/vim-go'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+let g:goto_header_use_find = 1 " By default it's value is 0
+noremap <leader>g :GotoHeader<enter>
 
 nmap <F8> :TagbarToggle<CR>
 map <silent> <C-n> :NERDTreeToggle<CR>
 map <C-z> :FZF<CR>
 
 set tags=./tags;
+
+let g:ycm_cland_binary_path = "/home/intern3/.local/bin/clangd"
 "------------------------------------------------------------------------------
 "------GENERAL-----------------------------------------------------------------
 "------------------------------------------------------------------------------
@@ -60,7 +74,7 @@ set list
 set listchars=tab:>-
 set wildmenu
 set laststatus=2                "displays filename at bottom
-set foldmethod=indent
+set foldmethod=syntax
 set foldnestmax=2
 "for youcomplete me
 set encoding=utf-8
@@ -73,7 +87,7 @@ set expandtab
 set autoindent
 set showmatch
 set colorcolumn=80
-set textwidth=79
+set textwidth=89
 set shiftwidth=4                "How much to shift when using >> <<
 set foldlevel=20
 highlight ExtraWhitespace ctermbg=green guibg=green
@@ -91,15 +105,20 @@ let mapleader=","
 noremap <leader><space> :nohlsearch<CR>
 noremap <leader>q :q<enter>
 noremap <leader>w :w<enter>
-noremap <leader>x :wq<enter> 
+noremap <leader>x :wq<enter>
 map <C-i> :set foldmethod=indent<CR>
 "allows you to quickly go to terminal and back
 map <C-d> :sh<CR>
 
+map <C-m> :MinimapToggle<CR>
+
+nnoremap <leader>i :VerilogFollowInstance<CR>
+nnoremap <leader>I :VerilogFollowPort<CR>
+
 "extra shit for tags
 
 "opens tag in another tab
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "opens tab in vertcal split, Alt+]
 "map <C-[> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 "
@@ -116,5 +135,5 @@ map <S-k> <C-w>k
 map <S-t> :hi Normal guibg=NONE ctermbg=NONE <CR>
 map <S-y> :colorscheme spacegray <CR>
 
-
-
+map <C-g> :Gblame<CR>
+map <C-b> :Gblame toggle<CR>
