@@ -1,0 +1,38 @@
+#!/bin/bash
+
+PACKAGES="vim screen kdeconnect gdm openbox plasma NetworkManager fzf
+          ctags xorg xorg-init xorg-xrandr i3-gaps dmenu feh clang
+          acpi openssh sshfs nmap vlc mplayer xcompmgr compton gimp
+          neofetch terminator firefox git i3lock evince ranger libreoffice"
+ARCH_PACKAGES="base-devel"
+
+AUR_CLIENT="yay"
+AUR_PACKAGES="signal-desktop silver-searcher-git discord spotify"
+
+sudo pacman -S $PACKAGES --quiet --noconfirm
+sudo pacman -S $ARCH_PACKAGES --quiet --noconfirm
+
+if [ "$AUR_CLIENT" = "yay" ]; then
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+
+    yay -S $AUR_PACKAGES
+fi
+
+cp -r wallpapers/ ~/Desktop
+if [ ! -d ~/.config ]; then
+    mkdir ~/.config
+fi
+cp -r openbox terminator tint2 ~/.config
+cp .bashrc ~/.bashrc
+
+sudo pacman -Syu --quiet --noconfirm
+
+sudo systemctl start NetworkManager
+sudo systemctl enable NetworkManager
+sudo systemctl enable gdm
+sudo systemctl start gdm
+
+bash vim_setup.sh

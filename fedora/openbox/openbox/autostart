@@ -1,7 +1,0 @@
-xrandr --output HDMI-1 --mode 1920x1080
-xrandr --output DP-2-2 --mode 1920x1080
-xrandr --output HDMI-1 --left-of eDP-1
-xrandr --output DP-2-2 --left-of HDMI-1
-compton -i 0.7 -e 1 &
-feh --bg-fill ~/Pictures/falcon_heavy.jpg &
-tint2 &
