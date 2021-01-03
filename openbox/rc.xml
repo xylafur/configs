@@ -317,7 +317,11 @@
         </action>
     </keybind>
 
-
+    <keybind key="W-S-Escape">
+        <action name="Execute">
+            <command>systemctl suspend</command>
+        </action>
+    </keybind>
 
     <keybind key="A-Escape">
       <action name="Lower"/>
