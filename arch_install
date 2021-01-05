@@ -12,7 +12,6 @@ AUR_PACKAGES="signal-desktop silver-searcher-git discord spotify"
 SERVICES="gdm NetworkManager"
 
 sudo pacman -S $PACKAGES
-exit
 sudo pacman -S $ARCH_PACKAGES
 
 if [ "$AUR_CLIENT" = "yay" ]; then
