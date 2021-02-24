@@ -48,9 +48,9 @@ syntax enable
 "set encoding utf-8
 set backspace=indent,eol,start  "add ability to backspace
 "set backup
-"set backupdir=~/.vim/tmp/backup
-"set directory=~/.vim/timp/swap  "where to put swap files
-"set undodir=~/.vim/tmp/undo
+set backupdir=~/.vim/tmp/backup
+set directory=~/.vim/tmp/swap  "where to put swap files
+set undodir=~/.vim/tmp/undo
 set undofile                    "makes undo possible after you close the file
 set t_BE= "this is supposed to fix the issue where when I exit vim copy / paste don't work
 set background=dark
@@ -86,7 +86,7 @@ set softtabstop=4              "Number spaces to insert for tab
 set expandtab
 set autoindent
 set showmatch
-set colorcolumn=80
+set colorcolumn=90,100
 set textwidth=89
 set shiftwidth=4                "How much to shift when using >> <<
 set foldlevel=20

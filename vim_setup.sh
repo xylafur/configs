@@ -11,11 +11,6 @@ fi
 
 sudo $INSTALL vim
 cp .vimrc ~/.vimrc
-mkdir ~/.vim
-mkdir ~/.vim/bundle
+mkdir -p ~/.vim/{,tmp,plugin,pack,vendor/Spacegray,bundle}
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mkdir ~/.vim/plugin
-mkdir ~/.vim/pack
-mkdir ~/.vim/pack/vendor
-mkdir ~/.vim/pack/vendor/Spacegray
 git clone git://github.com/ajh17/Spacegray.vim ~/.vim/pack/vendor/start/Spacegray
